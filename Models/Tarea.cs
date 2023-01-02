@@ -16,7 +16,7 @@ public class Tarea
     public Prioridad PrioridadTarea { get; set; }
     public DateTime FechaCreacion { get; set; }
     public virtual Categoria Categoria { get; set; }
-    [NotMapped] // omitir la propiedad Resumen al momento de crear la base de datos
+    //[NotMapped] // omitir la propiedad Resumen al momento de crear la base de datos
     public string Resumen { get; set; }
 }
 
