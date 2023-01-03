@@ -18,6 +18,7 @@ public class Tarea
     public virtual Categoria Categoria { get; set; }
     //[NotMapped] // omitir la propiedad Resumen al momento de crear la base de datos
     public string Resumen { get; set; }
+    public int Peso { get; set; }
 }
 
 public enum Prioridad
