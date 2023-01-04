@@ -13,4 +13,9 @@ app.MapGet("/dbconexion", async ([FromServices] TareasContext dbContext) =>
     dbContext.Database.EnsureCreated();
     return Results.Ok("Base de datos en memoria "+dbContext.Database.IsInMemory());
 });
+//EndPoint para consultar las tareas
+app.MapGet("/api/tareas",async([FromServices] TareasContext dbContext)=>
+{
+    return Results.Ok(dbContext.Tareas.Include(p=>p.Categoria).Where(p=> p.PrioridadTarea == ProyectoEntityFramework.Models.Prioridad.Baja));
+});
 app.Run();
